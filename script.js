@@ -10,6 +10,21 @@ if (!currentUser) {
    Units: g (grams), ml (milliliters), shot (espresso shot), scoop (ice cream)
    You can tweak starting stock for demo or testing.
 */
+
+/* ========= USER INFO ========= */
+const userInfo = document.getElementById("userInfo");
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (currentUser) {
+  userInfo.textContent = `Logged in as: ${currentUser.username} (${currentUser.role})`;
+}
+
+logoutBtn.addEventListener("click", () => {
+  localStorage.removeItem("currentUser");
+  window.location.href = "login.html";
+});
+
+
 const state = {
   ingredients: [
     {name:"Espresso Beans", unit:"g", stock:1000},
