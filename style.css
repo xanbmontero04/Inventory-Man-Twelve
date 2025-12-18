@@ -280,3 +280,57 @@ td:last-child {
 body {
   background: #f5f5f5;
 }
+
+/* ========= HEADER LAYOUT ========= */
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #7B5B45;
+  color: white;
+  padding: 15px 30px;
+}
+
+.header-left {
+  text-align: center;
+}
+
+.header-logo {
+  width: 90px;
+  display: block;
+  margin: 0 auto 6px;
+}
+
+.header-left h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.header-left p {
+  margin: 2px 0 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ========= USER / LOGOUT ========= */
+
+.header-right {
+  text-align: right;
+}
+
+#userInfo {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+#logoutBtn {
+  background-color: #000;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+#logoutBtn:hover {
+  background-color: #333;
+}
