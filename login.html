@@ -2,25 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login — Twelve Coffee IMS</title>
+
+  <!-- Main system styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <main>
-  <section class="card" style="max-width: 400px; margin: 80px auto;">
-    <h2>🔐 User Login</h2>
+  <section class="card login-card">
 
+    <!-- Logo -->
+    <img 
+      src="Twelve Image.jpg" 
+      alt="Twelve Coffee Logo" 
+      class="login-logo"
+    />
+
+    <h2>Inventory Management System</h2>
+
+    <!-- Login Form -->
     <form id="loginForm">
-      <input id="username" type="text" placeholder="Username" required />
-      <input id="password" type="password" placeholder="Password" required />
+      <input 
+        id="username" 
+        type="text" 
+        placeholder="Username" 
+        autocomplete="username"
+        required 
+      />
+
+      <input 
+        id="password" 
+        type="password" 
+        placeholder="Password"
+        autocomplete="current-password"
+        required 
+      />
+
       <button type="submit">Login</button>
     </form>
 
+    <!-- Message -->
     <div id="loginMsg" class="msg"></div>
+
   </section>
 </main>
 
+<!-- Login Logic -->
 <script src="login.js"></script>
+
 </body>
 </html>
