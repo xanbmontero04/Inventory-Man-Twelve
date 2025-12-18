@@ -7,13 +7,22 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <p id="userInfo"></p>
-<button id="logoutBtn">Logout</button>
-
+<header class="app-header">
+  <div class="header-left">
+    <img 
+      src="Twelve Image.jpg" 
+      alt="Twelve Coffee Logo" 
+      class="header-logo"
+    />
     <h1>Twelve Coffee Digos</h1>
     <p>Ingredient Inventory Management System</p>
-  </header>
+  </div>
+
+  <div class="header-right">
+    <p id="userInfo"></p>
+    <button id="logoutBtn">Logout</button>
+  </div>
+</header>
 
  <main>
   <!-- ========== PLACE ORDER (also logs attendance) ========== -->
@@ -123,4 +132,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
