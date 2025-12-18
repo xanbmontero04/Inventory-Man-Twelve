@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Twelve Coffee Digos — Inventory Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Twelve Coffee Digos</h1>
+    <p>Ingredient Inventory Management System</p>
+  </header>
+
+ <main>
+  <!-- ========== PLACE ORDER (also logs attendance) ========== -->
+  <section class="card">
+    <h2>🧾 Place Order (logs employee attendance)</h2>
+    <form id="orderForm">
+      <input id="employeeName" type="text" placeholder="Employee name" required />
+      <select id="classSelect" required>
+        <option value="">Select Class</option>
+      </select>
+      <select id="varietySelect" required disabled>
+        <option value="">Select Variety</option>
+      </select>
+      <select id="sizeSelect">
+        <option value="12">12 oz</option>
+        <option value="16">16 oz</option>
+      </select>
+      <input id="qtyInput" type="number" min="1" value="1" />
+      <button type="submit">Submit Order</button>
+    </form>
+    <div id="orderMessage" class="msg"></div>
+    <details class="mini">
+      <summary>Show recipe for selected drink</summary>
+      <ul id="recipePreview"></ul>
+    </details>
+  </section>
+
+  <!-- ========== INVENTORY TABLE ========== -->
+  <section class="card">
+    <h2>📦 Ingredient Inventory</h2>
+    <div class="tools">
+      <input id="invSearch" type="search" placeholder="Search ingredient…" />
+    </div>
+    <table>
+      <thead>
+        <tr><th>Ingredient</th><th>Stock</th><th>Unit</th><th>Status</th></tr>
+      </thead>
+      <tbody id="inventoryTable"></tbody>
+    </table>
+  </section>
+
+  <!-- ========== RESTOCK ========== -->
+  <section class="card">
+    <h2>➕ Restock Ingredient</h2>
+    <form id="restockForm">
+      <select id="restockSelect" required></select>
+      <input id="restockQty" type="number" min="1" placeholder="Qty to add" required />
+      <button type="submit">Restock</button>
+    </form>
+    <div id="restockMsg" class="msg"></div>
+  </section>
+
+  <!-- ========== ORDER / ATTENDANCE LOG ========== -->
+  <section class="card">
+    <h2>📋 Orders & Attendance</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Employee</th>
+          <th>Class</th>
+          <th>Variety</th>
+          <th>Size</th>
+          <th>Qty</th>
+          <th>Date/Time</th>
+          <th>Update</th>
+        </tr>
+      </thead>
+      <tbody id="orderLog"></tbody>
+    </table>
+    <div class="totals">
+      <span id="todayCount">Today’s orders: 0</span>
+      <span id="lowCount">Low ingredients: 0</span>
+      <span id="lackCount">Lacking ingredients: 0</span>
+    </div>
+  </section>
+
+  <!-- ========== FINANCIAL REPORT (NEW) ========== -->
+  <section class="card">
+    <h2>💰 Finance Overview</h2>
+    <div class="tools">
+      <button id="generateReport">Generate Financial Report</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Amount (₱)</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody id="financeTable"></tbody>
+    </table>
+
+    <div class="totals">
+      <p><strong>Total Income:</strong> ₱<span id="totalIncome">0</span></p>
+      <p><strong>Total Expenses:</strong> ₱<span id="totalExpenses">0</span></p>
+      <p><strong>Net Profit:</strong> ₱<span id="netProfit">0</span></p>
+    </div>
+  </section>
+</main>
+
+
+  <footer>© 2025 Twelve Coffee Digos • IMS</footer>
+  <script src="script.js"></script>
+</body>
+</html>

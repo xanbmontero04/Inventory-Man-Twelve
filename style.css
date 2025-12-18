@@ -1,0 +1,236 @@
+/* ========= GLOBAL STYLES ========= */
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #7B5B45;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin: 10px;
+  width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+form {
+  margin-bottom: 15px;
+}
+
+form input, form select, form button {
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #7B5B45;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  padding: 6px 10px;
+}
+
+button:hover {
+  background: #5b3c2c;
+  transform: scale(1.05);
+}
+
+/* ========= TABLE STYLING ========= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background: #7B5B45;
+  color: #fff;
+}
+
+th, td {
+  text-align: center;
+  padding: 12px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #f9f3ee;
+  transition: background-color 0.3s ease;
+}
+
+/* ========= EDITABLE CELLS ========= */
+.editing td.editable {
+  background-color: #fff8e1;
+  border: 1px solid #f1c40f;
+}
+
+/* ========= BUTTONS IN TABLES ========= */
+td:last-child {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.editBtn, .deleteBtn {
+  min-width: 70px;
+  font-size: 13px;
+  border-radius: 6px;
+  padding: 6px 10px;
+  transition: all 0.25s ease;
+}
+
+/* Edit Button */
+.editBtn {
+  background-color: #3498db;
+  color: #fff;
+}
+.editBtn:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+/* Delete Button */
+.deleteBtn {
+  background-color: #e74c3c;
+  color: #fff;
+}
+.deleteBtn:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* ========= STATUS MESSAGES ========= */
+.msg {
+  margin-top: 12px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.msg.ok {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.msg.err {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* ========= STOCK HIGHLIGHTS ========= */
+.low {
+  background: #ffeb3b;
+}
+.lacking {
+  background: #f44336;
+  color: white;
+}
+
+/* ========= FINANCE SECTION ========= */
+#generateReport {
+  background-color: #a47450;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+#generateReport:hover {
+  background-color: #8b6342;
+  transform: scale(1.05);
+}
+
+/* Totals Section for Finance */
+.totals {
+  margin-top: 20px;
+  text-align: right;
+  background-color: #faf7f4;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #e2d4c4;
+}
+.totals p {
+  margin: 6px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+.totals strong {
+  color: #7B5B45;
+}
+#netProfit {
+  color: #2e7d32; /* green for positive profit */
+  font-weight: bold;
+}
+#totalExpenses {
+  color: #b71c1c; /* red for expenses */
+}
+
+/* ========= RESPONSIVE TABLE ========= */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 10px;
+  }
+
+  td {
+    text-align: right;
+    padding: 10px;
+    border: none;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    color: #7B5B45;
+    text-transform: capitalize;
+  }
+
+  td:last-child {
+    justify-content: flex-end;
+  }
+
+  .totals {
+    text-align: left;
+  }
+}
